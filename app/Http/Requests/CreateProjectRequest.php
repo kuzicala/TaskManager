@@ -29,14 +29,14 @@ class CreateProjectRequest extends Request
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'name.required'=>"项目名称必须",
-            'name.unique'=>"项目名称已经存在",
-            'thumbnail.image'=>"请上传图片格式",
-            'thumbnail.dimensions'=>"宽度需要大于261，高度大于98"
-        ];
-    }
+//    public function messages()
+//    {
+//        return [
+//            'name.required'=>"项目名称必须",
+//            'name.unique'=>"项目名称已经存在",
+//            'thumbnail.image'=>"请上传图片格式",
+//            'thumbnail.dimensions'=>"宽度需要大于261，高度大于98"
+//        ];
+//    }
 
 }

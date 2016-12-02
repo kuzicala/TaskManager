@@ -71,6 +71,12 @@
     </nav>
 
     @yield('content')
+    <div class="clearfix"></div>
+    <footer class="footer">
+        <div class="container">
+            当前总共{{$total}}项目,未完成{{$toDo}},已经完成{{$Done}}
+        </div>
+    </footer>
     <!-- JavaScripts -->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>

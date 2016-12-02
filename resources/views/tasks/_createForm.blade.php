@@ -1,4 +1,5 @@
 {!! Form::open(['route'=>['tasks.store','project'=>$project->id],'method'=>'post','class'=>'form-inline']) !!}
+<td class="date-cell"></td>
 <td class="first-cell">
     {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'有什么要完成的任务吗']) !!}
 </td>

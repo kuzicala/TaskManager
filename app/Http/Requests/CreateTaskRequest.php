@@ -28,11 +28,11 @@ class CreateTaskRequest extends Request
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'name.required'=>'任务名称不能为空',
-            'name.max'=>'任务名称最长255',
-        ];
-    }
+//    public function messages()
+//    {
+//        return [
+//            'name.required'=>'任务名称不能为空',
+//            'name.max'=>'任务名称最长255',
+//        ];
+//    }
 }

@@ -24,16 +24,16 @@ class EditProjectRequest extends Request
     public function rules()
     {
         return [
-            'title'=>'required'
+            'name'=>'required'
             //
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'title.required'=>'项目名称必填'
-            //
-        ];
-    }
+//    public function messages()
+//    {
+//        return [
+//            'name.required'=>'项目名称必填'
+//            //
+//        ];
+//    }
 }

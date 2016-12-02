@@ -78,7 +78,7 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\EditProjectRequest $request, $id)
+    public function update(Requests\EditTaskRequest $request, $id)
     {
             $task = Task::findOrFail($id);
             $task->title = $request->title;

@@ -28,11 +28,11 @@ class EditTaskRequest extends Request
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'title.required'=>'任务名称不能为空',
-            'title.max'=>'任务名称最长255',
-        ];
-    }
+//    public function messages()
+//    {
+//        return [
+//            'title.required'=>'任务名称不能为空',
+//            'title.max'=>'任务名称最长255',
+//        ];
+//    }
 }

@@ -15,4 +15,11 @@ class Project extends Model
     public function tasks(){
         return $this->hasMany('App\Task');
     }
+
+    public function getThumbnailAttribute($value){
+        if(!$value){
+            return "default.jpg";
+        }
+        return $value;
+    }
 }

@@ -83,6 +83,7 @@ class ProjectsController extends Controller
      */
     public function update(EditProjectRequest $request, $id)
     {
+
         $this->repo->updateProject($request,$id);
         return Redirect::back();
     }

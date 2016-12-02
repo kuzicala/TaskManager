@@ -26,10 +26,10 @@
             @if($errors->has('title'))
                 <ul class="alert alert-danger">
                     @foreach($errors->get('title') as $error)
-                        <li>{{ $error }}</li>
+                        <li>{{$error}}</li>
                     @endforeach
                 </ul>
-             @endif
+            @endif
             <div class="modal-footer">
                 {!! Form::submit('编辑任务',['class'=>'btn btn-default btn-primary']) !!}
                 {!! Form::close() !!}
