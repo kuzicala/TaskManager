@@ -26,7 +26,7 @@
             @if($errors->has('title'))
                 <ul class="alert alert-danger">
                     @foreach($errors->get('title') as $error)
-                        <li>{{$error}}</li>
+                        <li>{{ $error }}</li>
                     @endforeach
                 </ul>
              @endif
