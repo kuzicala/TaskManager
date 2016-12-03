@@ -16,5 +16,6 @@ Route::get('/', 'HomeController@welcome');
 Route::auth();
 Route::resource('projects', 'ProjectsController');
 Route::post('tasks/{id}/check',['as'=>'tasks.check',"uses"=>'TasksController@check']);
+Route::get('tasks/charts', ['as'=>'tasks.charts','uses'=>'TasksController@charts']);
 Route::resource('tasks', 'TasksController');
 Route::get('/home', 'HomeController@index');

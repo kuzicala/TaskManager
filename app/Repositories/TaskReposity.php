@@ -16,20 +16,26 @@ class TaskReposity{
      * 总共
      */
     public function total(){
-        return Auth::user()->tasks()->count();
+        if(Auth::check()){
+            return Auth::user()->tasks()->count();
+        }
     }
 
     /**
      * 未完成
      */
     public function toDoCount(){
-        return Auth::user()->tasks()->where('completed',0)->count();
+        if(Auth::check()) {
+            return Auth::user()->tasks()->where('completed', 0)->count();
+        }
     }
 
     /**
      * 上传图片
      */
     public function doneCount(){
-        return Auth::user()->tasks()->where('completed',1)->count();
+        if(Auth::check()) {
+            return Auth::user()->tasks()->where('completed', 1)->count();
+        }
     }
 }
