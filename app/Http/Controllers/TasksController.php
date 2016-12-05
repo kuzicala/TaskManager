@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
+use App\Repositories\TaskReposity;
 use App\Task;
 use Illuminate\Http\Request;
 
@@ -11,6 +13,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class TasksController extends Controller
 {
+
+    protected $task = null;
+    public function __construct(TaskReposity $task)
+    {
+            $this->task = $task;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -104,5 +113,14 @@ class TasksController extends Controller
         $task->completed = 1;
         $task->save();
         return redirect::back();
+    }
+
+    public function charts(){
+        $total = $this->task->total();
+        $toDoCount = $this->task->toDoCount();
+        $DoneCount = $this->task->doneCount();
+        $names = Auth::user()->projects()->lists('name');
+        $projects = Project::with('tasks')->get();
+        return view('tasks.charts',compact('total','toDoCount','DoneCount','names','projects'));
     }
 }
