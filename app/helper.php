@@ -1,5 +1,4 @@
 <?php
-
 function TasksCountArray($projects){
     $counts = array();
     foreach ($projects as $project){
@@ -7,4 +6,11 @@ function TasksCountArray($projects){
         array_push($counts,$perCount);
     }
     return $counts;
+}
+
+function rand_color(){
+    $R = rand(0,255);
+    $B = rand(0,255);
+    $G = rand(0,255);
+    return 'rgba('.$R.','.$G.','.$B.',0.5)';
 }

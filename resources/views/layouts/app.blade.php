@@ -72,14 +72,14 @@
     </nav>
 
     @yield('content')
-    @if(\Illuminate\Support\Facades\Auth::check())
-    <div class="clearfix"></div>
-    <footer class="footer">
-        <div class="container">
-            当前总共{{$total}}项目,未完成{{$toDo}},已经完成{{$Done}}
-        </div>
-    </footer>
-    @endif
+    {{--@if(\Illuminate\Support\Facades\Auth::check())--}}
+    {{--<div class="clearfix"></div>--}}
+    {{--<footer class="footer">--}}
+        {{--<div class="container">--}}
+            {{--当前总共{{$total}}项目,未完成{{$toDo}},已经完成{{$Done}}--}}
+        {{--</div>--}}
+    {{--</footer>--}}
+    {{--@endif--}}
     <!-- JavaScripts -->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
