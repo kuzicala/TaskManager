@@ -30,6 +30,7 @@
 </div>
 @endsection
 @section('customJS')
+    @parent
     <script>
         $(function () {
             $(".icon-bar").hide();

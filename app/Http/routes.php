@@ -15,6 +15,7 @@ Route::auth();
 Route::resource('projects', 'ProjectsController');
 Route::post('tasks/{id}/check',['as'=>'tasks.check',"uses"=>'TasksController@check']);
 Route::get('tasks/charts', ['as'=>'tasks.charts','uses'=>'TasksController@charts']);
+Route::get('tasks/search', ['as'=>'tasks.search','uses'=>'TasksController@search']);
 Route::resource('tasks', 'TasksController');
 Route::post('tasks/{id}/steps/complete','StepsController@complete');
 Route::delete('tasks/{id}/steps/clear','StepsController@clear');

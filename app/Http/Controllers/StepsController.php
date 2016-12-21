@@ -72,7 +72,7 @@ class StepsController extends Controller
             ]);
     }
     public function clear($taskID){
-        Task::findOrFail($taskID)->steps()->delete();
+        Task::findOrFail($taskID)->steps()->where('completed',1)->delete();
     }
     /**
      * Update the specified resource in storage.

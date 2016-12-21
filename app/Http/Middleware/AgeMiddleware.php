@@ -16,8 +16,8 @@ class AgeMiddleware
     public function handle($request, Closure $next)
     {
         if(!$request->age){
-            exit( 'sorry dude,we only accept adult');
-        }
+
+    }
         return $next($request);
     }
 }

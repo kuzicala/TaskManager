@@ -125,4 +125,9 @@ class TasksController extends Controller
         $projects = Project::with('tasks')->get();
         return view('tasks.charts',compact('total','toDoCount','DoneCount','names','projects'));
     }
+
+    public function search(){
+        $tasks = Auth::user()->tasks;
+        return $tasks;
+    }
 }

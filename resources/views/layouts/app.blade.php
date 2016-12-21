@@ -48,7 +48,10 @@
                     <li>{{link_to_route('tasks.index','所有任务')}}</li>
                     <li>{{link_to_route('tasks.charts','图表统计')}}</li>
                 </ul>
-
+                <!-- Instant search form -->
+               @if(Auth::user())
+                <search></search>
+               @endif
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
@@ -83,7 +86,9 @@
     <!-- JavaScripts -->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    @yield('customJS')
+    @section('customJS')
+        <script src="{{asset('js/search.js')}}"></script>
+    @show
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

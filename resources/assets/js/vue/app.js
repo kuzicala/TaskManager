@@ -13,7 +13,6 @@ var app = new Vue({
         steps:[
             {name:'', completed:false}
         ],
-        newStep:'',
         baseUrl:top.location+'/steps'
     },
     beforeCreate:function () {
@@ -35,9 +34,9 @@ var app = new Vue({
                 // error callback
             });
         },
-        addStep:function () {
-            resource.save('', {name: this.newStep}).then((response) => {
-                this.newStep = '';
+        addStep:function (step) {
+            resource.save('', {name: step}).then((response) => {
+
                 this.fetchSteps();
             }, (response) => {
                 // error callback
@@ -57,21 +56,8 @@ var app = new Vue({
                 response.status;
             });
         },
-        editStep:function (step) {
-            this.removeStep(step);
-            this.newStep = step.name;
-            this.$refs.newStep.focus();
-        },
-        inProcess:function (steps) {
-            return steps.filter(function (step) {
-                return step.completed != true;
-            })
-        },
-        inCompleted:function (steps) {
-            return steps.filter(function (step) {
-                return  step.completed == true;
-            })
-        },
+
+
         completeAll:function () {
             this.$http.post(this.baseUrl+'/complete').then((response)=> {
                 this.fetchSteps();
@@ -86,18 +72,7 @@ var app = new Vue({
                 response.status;
             });
         }
-    },
-    computed:{
-        remainings:function () {
-            return this.steps.filter(function (step) {
-                return !step.completed;
-            })
-        },
-        completation:function () {
-            return this.steps.filter(function (step) {
-                return step.completed;
-            })
-        }
     }
+
 
 });
