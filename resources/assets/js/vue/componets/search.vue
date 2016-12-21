@@ -7,7 +7,7 @@
             </div>
         </div>
         <ul class="list-group search-list" v-if="show">
-            <li class="list-group-item" v-for="task in tasks"  >
+            <li class="list-group-item" v-for="task in checkTasks(tasks)"  >
                 <a :href="link(task)"><p>{{task.title}}</p></a>
             </li>
         </ul>
@@ -39,13 +39,14 @@
             link:function(task){
                 return "/tasks/"+task.id
             },
-//            checkTasks:function (tasks) {
-//                return tasks.filter(function (task) {
-//                    if(task.title.indexOf(searchStr) != -1){
-//                        return task;
-//                    }
-//                })
-//            }
+            checkTasks:function (tasks) {
+                var vm = this;
+                return tasks.filter(function (task) {
+                    if(task.title.indexOf(vm.searchStr) !== -1){
+                        return task;
+                    }
+                })
+            }
         }
     }
 </script>
